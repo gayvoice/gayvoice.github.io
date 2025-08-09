@@ -3,16 +3,57 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+  <p>Ever wondered how good your gaydar really is? Find out now, with our quiz! You'll listen to 11–12 audio files, and rate them on a scale from 1–5 based on how straight or gay their speech is to you. At the end, you'll find out just how good your gaydar is. Ready to find out?</p>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <p><a id="quiz-link" href="#" rel="nofollow">Take the quiz here!</a></p>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+  <p>Note: these quizzes will be used in research. Your identity will remain anonymous. Read the full informed consent statement <a id="consent-link" href="#">here</a>.</p>
 </div>
+
+<script>
+  (function () {
+    // 1) Configure your destinations (internal pages or external forms)
+    const variants = {
+      a: {
+        quiz:  "/quiz-a/",          // or "https://forms.gle/FORM_ID_A"
+        consent: "/informed-consent/"      // or a single consent page if same for all
+      },
+      b: {
+        quiz:  "/quiz-b/",
+        consent: "/informed-consent/"
+      },
+      c: {
+        quiz:  "/quiz-c/",
+        consent: "/informed-consent/"
+      }
+    };
+
+    // 2) Allow ?variant=a|b|c to force a bucket (useful for testing)
+    const params = new URLSearchParams(location.search);
+    const forced = params.get("variant");
+
+    // 3) Sticky assignment via localStorage
+    const KEY = "gayvoice_quiz_variant";
+    let bucket = (forced && variants[forced]) ? forced : localStorage.getItem(KEY);
+
+    if (!bucket || !variants[bucket]) {
+      // Uniform random A/B/C
+      bucket = ["a","b","c"][Math.floor(Math.random() * 3)];
+      localStorage.setItem(KEY, bucket);
+    }
+
+    // 4) Wire up links
+    const quizLink = document.getElementById("quiz-link");
+    const consentLink = document.getElementById("consent-link");
+    if (quizLink)   quizLink.href   = variants[bucket].quiz;
+    if (consentLink) consentLink.href = variants[bucket].consent;
+
+    // 5) (Optional) Auto-redirect instead of showing a link:
+    // location.replace(variants[bucket].quiz);
+  })();
+</script>
+
+<noscript>
+  <!-- Fallback if JS is disabled: send to a chooser or one default quiz -->
+  <p><a href="/quiz-a/">Start the quiz</a> (JS disabled)</p>
+</noscript>
