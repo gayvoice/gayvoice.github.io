@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Informed Consent
 permalink: /informed-consent/
 ---
 
