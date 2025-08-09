@@ -4,7 +4,7 @@ title: Gay Voice Listener Perception Quiz
 permalink: /quiz-a/
 ---
 
-Thank you so much for helping us collect data for our research project! You can find the response form <b><a href="placeholder" target="_blank" rel="noopener noreferrer">here</a></b>. The audio files are below. Answer quickly and off what your gut tells you! Tip: sometimes there's some silence at the beginning of the file. Click into the middle to quickly get to audio.
+Thank you so much for helping us collect data for our research project! You can find the response form <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSetOHLkPvTpQR9a8gxyO5wxNBlAszGbK35TRaF9kJCCXWQWMg/viewform?usp=header" target="_blank" rel="noopener noreferrer">here</a></b>. The audio files are below. Answer quickly and off what your gut tells you! Tip: sometimes there's some silence at the beginning of the file. Click into the middle to quickly get to audio.
 
 ## Audio Files (Quiz A)
 
