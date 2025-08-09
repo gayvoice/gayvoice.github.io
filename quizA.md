@@ -94,6 +94,8 @@ Thank you so much for helping us collect data for our research project! You can 
   </div>
 </div>
 
+Wanna do another one? You can take <a href="https://gayvoice.github.io/quiz-b">Quiz B</a> or <a href="https://gayvoice.github.io/quiz-c">Quiz C</a>.
+
 <script>
   document.addEventListener("play", function(e){
     const audios = document.querySelectorAll("audio");
